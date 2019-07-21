@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiLink: 'http://www.mocky.io/v2/5d323594330000a9c17ba5f1'
+  apiLink: 'http://www.mocky.io/v2/5d323594330000a9c17ba5f1',
+  production: false
 };
 
 /*
