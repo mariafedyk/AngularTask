@@ -1,0 +1,77 @@
+.form{
+   width: 100%;
+}
+.btn {
+  font-family: Helvetica, sans-serif;
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+  background: rgb(218,47,220);
+  background: linear-gradient(90deg, rgba(218,47,220,1) 0%, rgba(71,9,121,1) 49%, rgb(0, 255, 235) 100%);
+  color: white;
+  font-size: 20px;
+}
+.info-change{
+  display: block;
+  width: 100%;
+  padding: 0 38px;
+  font-family: Helvetica, sans-serif;
+  line-height: 1.2;
+  font-size: 15px;
+  border: 0;
+  outline: none;
+  transition: all .3s ease-out;
+  background-color: #e6e6e6;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.info-change:focus{
+  box-shadow: 0 0 0 0.3rem rgba(109, 37, 151, 0.315);
+  background-color: #fff; 
+}
+.btn:hover{
+  box-shadow: 0 0 0 0.3rem rgba(109, 37, 151, 0.315);
+}
+.form-comp{
+  position: relative;
+  margin-bottom: 1rem;
+}
+.form-comp input {
+  height: auto;
+  border-radius: 2rem;
+}
+.form-comp>input{
+  padding: .75rem 1.5rem;
+}
+hr{
+  border: 0;
+  border-top: 1px solid rgba(105, 22, 116, 0.3);
+}
+.my-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+}
+.my-row-header {
+  margin: 0;
+}
+h1, h2{
+  font-family: Helvetica, sans-serif;
+  color: #403866;
+}
+.optional {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.optional input {
+  width: 90%;
+}
+.optional i{
+  z-index: 1;
+}

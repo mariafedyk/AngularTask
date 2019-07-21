@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="container-registr">
+        <div class="auth-block">
+            <span class="title">SIGN UP</span>
+            <form [formGroup]="registrationForm" (ngSubmit)="createUser()">
+                <div class="form-comp">
+                    <input type="text" name="name" id="name" placeholder="John Doe" class="form-control ng-pristine ng-invalid ng-touched" required formControlName="name">
+                    <label for="name">Your Name</label>
+                </div>
+                <hr>
+                <p class="error" *ngIf="!registrationForm.get('name').valid && registrationForm.get('name').dirty">Please, fill it in!</p>
+                <div class="form-comp">
+                    <input type="text" name="username" id="username" placeholder="user111" class="form-control ng-pristine ng-invalid ng-touched" required formControlName="username">
+                    <label for="username">Your Username</label>
+                </div>
+                <hr>
+                <p class="error" *ngIf="!registrationForm.get('username').valid && registrationForm.get('username').dirty">Please, fill it in!</p>
+                <div class="form-comp">
+                    <input type="password" name="password" id="password" placeholder="Enter here" class="form-control ng-pristine ng-invalid ng-touched" required formControlName="password">
+                    <label for="password">Your Password</label>
+                </div>
+                <hr>
+                <p class="error" *ngIf="!registrationForm.get('password').valid && registrationForm.get('password').dirty">Please, fill it in!</p>
+                <span class="opt">OPTIONAL</span>
+                <div class="form-comp optional">
+                    <a (click)="addPhoneNumber()"><i class="fa fa-plus add"></i></a>
+                    <span>Phone Numbers</span>
+                </div>
+                <hr>
+                <div class="form-comp optional" [formGroup]="phoneNumberGroup" *ngFor="let phoneNumberGroup of phoneNumbersGroup.controls; let i = index;">
+                    <i class="fa fa-remove add" (click)="removePhoneNumberField(i)"></i>    
+                    <input type="tel" id="phoneNumber{{i + 1}}" class="form-control" name="phoneNumber{{i + 1}}" placeholder="Phone number #{{i + 1}}" autofocus formControlName="phoneNumber">
+                    <p class="error" *ngIf="!phoneNumberGroup.get('phoneNumber').valid && phoneNumberGroup.get('phoneNumber').dirty && phoneNumberGroup.get('phoneNumber').hasError('required')"> This field is empty!</p>
+                    <p class="error" *ngIf="!phoneNumberGroup.get('phoneNumber').valid && phoneNumberGroup.get('phoneNumber').dirty && phoneNumberGroup.get('phoneNumber').hasError('pattern')"> Please follow a phone number pattern!</p>
+                    <p class="error" *ngIf="!phoneNumberGroup.get('phoneNumber').valid && phoneNumberGroup.get('phoneNumber').dirty && phoneNumberGroup.get('phoneNumber').hasError('notUnique')">You already have this phone number!</p>
+                </div>
+                <div class="optional form-comp">
+                    <a (click)="addHobby()"><i class="fa fa-plus add"></i></a>
+                    <span>Hobbies</span>
+                </div>
+                <hr>
+                <div class="optional form-comp" [formGroup]="hobbyGroup" *ngFor="let hobbyGroup of hobbiesGroup.controls; let i = index;">
+                    <i class="fa fa-remove add" (click)="removeHobbyField(i)"></i>
+                    <input type="text" id="hobby{{i + 1}}" class="form-control" name="hobby{{i + 1}}" placeholder="Hobby #{{i + 1}}" autofocus formControlName="hobbyName">
+                    <p class="error" *ngIf="!hobbyGroup.get('hobbyName').valid && hobbyGroup.get('hobbyName').dirty && hobbyGroup.get('hobbyName').hasError('required')">This field is empty!</p>
+                    <p class="error" *ngIf="!hobbyGroup.get('hobbyName').valid && hobbyGroup.get('hobbyName').dirty && hobbyGroup.get('hobbyName').hasError('notUnique')">You already have this hobby!</p>
+                </div>
+                <button class="btn" type="submit" [disabled]="!registrationForm.valid" (click)="createUser">SUBMIT</button>
+                <div class="goback">
+                    <p>Already have an account?</p>
+                    <a routerLink="/login">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+.container-inside{
+    width: 390px;
+    border-radius: 4.5rem;
+    background-color: #fff;
+    margin: auto;
+    position: relative;
+    margin-top: 6%;
+    box-shadow: 0 0.7rem 4rem 0 rgba(120, 30, 121, 0.253);
+}
+.login-block span {
+    width: 100%;
+    display: block;
+    font-family: Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: #403866;
+    margin-bottom: 22px;
+}
+.login-block{
+    width: 100%;
+    padding: 35px 0;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+}
+.form-comp-group{
+    width: 100%;
+    position: relative;
+    border: 1px solid transparent;
+    margin-bottom: 16px;
+}
+.btn{
+    color: #fff!important;
+    background: rgb(218,47,220);
+    background: linear-gradient(90deg, rgba(218,47,220,1) 0%, rgba(71,9,121,1) 49%, rgba(0,255,235,1) 100%);
+    transition: all .3s ease-out;
+}
+.btn:hover{
+    box-shadow: 0 0 0 0.3rem rgba(109, 37, 151, 0.315);
+}
+.form-comp-group input, .btn{
+    font-family: Helvetica, sans-serif;
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 311px;
+    height: 62px;
+    padding: 0 38px;
+    margin: auto;
+    color: #403866;
+    border: 0;
+    outline: none;
+    transition: all .3s ease-out;
+    background-color: #e6e6e6;
+    border-radius: 30px;
+}
+.form-comp-group input:focus{
+    box-shadow: 0 0 0 0.3rem rgba(109, 37, 151, 0.315);
+    background-color: #fff;
+}
+.user{
+    width: 311px;
+    height: 53px;
+    margin: auto;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    line-height: 52px;
+    display: block;
+    background-color: #e6e6e6;
+    color: #6d6c6c;
+    border-radius: 30px;
+    padding: 0 38px;
+    margin-top: 10px;  
+}
+.ask{
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: #8a41b4;
+}
+.login-block a{
+    display: block;
+    margin: auto;
+    font-family: Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: #44397e; 
+    font-weight: bold; 
+}
+.login-block a:hover{
+    text-decoration: underline;
+}
+.bad-entrance{
+    font-size: 30px;
+    text-align: center;
+    color: red;
+    font-family: Helvetica, sans-serif;
+}

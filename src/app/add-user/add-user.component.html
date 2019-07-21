@@ -1,0 +1,48 @@
+<div class="modal-header">
+  <h1 class="modal-title" id="modal-basic-title">{{user.id ? 'Edit' : 'Add user'}}</h1>
+</div>
+<div class="modal-body">
+  <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="form-comp">
+      <input type="text" id="number" class="form-control info-change" name="number" placeholder="ID number" autofocus formControlName="number">
+      <small class="form-text text-danger" *ngIf="!myForm.get('number').valid && myForm.get('number').dirty"> This field is required</small>
+    </div>         
+    <div class="form-comp">
+      <input type="text" id="name" class="form-control info-change" name="name" placeholder="Name" autofocus formControlName="name">
+      <small class="form-text text-danger" *ngIf="!myForm.get('name').valid && myForm.get('name').dirty"> This field is required</small>
+    </div>
+    <div class="form-comp">
+      <input type="text" id="username" class="form-control info-change" name="username" placeholder="Username" formControlName="username">
+      <small class="form-text text-danger" *ngIf="!myForm.get('username').valid && myForm.get('username').dirty"> This field is required</small>
+    </div>
+    <div class="form-comp">
+      <input type="password" id="password" class="form-control info-change" name="password" placeholder="Password" formControlName="password">
+      <small class="form-text text-danger" *ngIf="!myForm.get('password').valid && myForm.get('password').dirty">This field is required</small>
+    </div>
+    <div class="my-row my-2">
+      <h2 class="my-row-header">Hobbies</h2>
+      <a (click)="addHobby()"><i class="fa fa-plus"></i></a>
+    </div>
+    <hr>
+    <div class="form-comp optional" [formGroup]="hobbyGroup" *ngFor="let hobbyGroup of hobbiesGroup.controls; let i = index;">
+      <input type="text" id="hobby{{i + 1}}" class="form-control info-change" name="hobby{{i + 1}}" placeholder="Hobby #{{i + 1}}" autofocus formControlName="hobbyName">
+      <i class="fa fa-remove ml-3" (click)="removeHobbyField(i)"></i>
+      <small class="form-text text-danger" *ngIf="!hobbyGroup.get('hobbyName').valid && hobbyGroup.get('hobbyName').dirty && hobbyGroup.get('hobbyName').hasError('required')">This field is required</small>
+      <small class="form-text text-danger" *ngIf="!hobbyGroup.get('hobbyName').valid && hobbyGroup.get('hobbyName').dirty && hobbyGroup.get('hobbyName').hasError('notUnique')">This field must be unique</small>
+    </div>
+    <hr>
+    <div class="my-row my-2">
+      <h2 class="my-row-header">Phone number</h2>
+      <a (click)="addPhoneNumber()"><i class="fa fa-plus"></i></a>
+    </div>
+    <hr>
+    <div class="form-comp optional" [formGroup]="phoneNumberGroup" *ngFor="let phoneNumberGroup of phoneNumbersGroup.controls; let i = index;">
+      <input type="text" id="phoneNumber{{i + 1}}" class="form-control info-change" name="phoneNumber{{i + 1}}" placeholder="Phone number #{{i + 1}}" autofocus formControlName="phoneNumber">
+      <i class="fa fa-remove ml-3" (click)="removePhoneNumberField(i)"></i>
+      <small class="form-text text-danger" *ngIf="!phoneNumberGroup.get('phoneNumber').valid && phoneNumberGroup.get('phoneNumber').dirty && phoneNumberGroup.get('phoneNumber').hasError('required')">This field is required</small>
+      <small class="form-text text-danger" *ngIf="!phoneNumberGroup.get('phoneNumber').valid && phoneNumberGroup.get('phoneNumber').dirty && phoneNumberGroup.get('phoneNumber').hasError('notUnique')">This field must be unique</small>
+      <small class="form-text text-danger" *ngIf="!phoneNumberGroup.get('phoneNumber').valid && phoneNumberGroup.get('phoneNumber').dirty && phoneNumberGroup.get('phoneNumber').hasError('pattern')">Bad phone number format</small>
+    </div>
+    <button class="btn btn-lg btn-block" type="submit">SAVE</button>
+  </form>
+</div>

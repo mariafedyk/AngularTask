@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="container-inside">
+        <div class="login-block">
+            <span>Welcome</span>
+            <form novalidate class="form-st ng-pristine ng-invalid ng-touched" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-comp-group">
+                    <input type="text" name="username" id="username" placeholder="Username" class="form-control" required formControlName="username">
+                </div>
+                <div class="form-comp-group">    
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-control" required formControlName="password">
+                </div>
+                <button class="form-comp-group btn" type="submit" (click)="onSubmit()" [disabled]="form.invalid">Login</button>
+                <p class="ask">Don't have an account?</p>
+                <a routerLink="/registration">Sign Up</a>
+                <p class="user">Username: user | Password: 12345</p>
+            </form>
+        </div>
+    </div>
+    <p class="bad-entrance" *ngIf="badEntrance">Wrong username or password!</p>
+</div>
